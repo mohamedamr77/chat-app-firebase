@@ -2,6 +2,7 @@
 
 import 'package:chatapp/features/logins_singnup-screen/widget/customButton.dart';
 import 'package:chatapp/features/logins_singnup-screen/widget/customtextformfield.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/constant.dart';
@@ -9,6 +10,8 @@ import '../../core/constant.dart';
 class SignUpScreen extends StatelessWidget {
    SignUpScreen({super.key});
    static String id="signUp Screen";
+   String? email;
+   String? password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,11 +44,22 @@ class SignUpScreen extends StatelessWidget {
                ),
              ),
              SizedBox(height: MediaQuery.of(context).size.height*0.03,),
-             const CustomTextFormField(text: 'Email',),
+              CustomTextFormField(text: 'Email',
+               onChanged:(emailData){
+                       email=emailData;
+             } ,),
              SizedBox(height: MediaQuery.of(context).size.height*0.02,),
-             const CustomTextFormField(text: 'Password',),
+              CustomTextFormField(text: 'Password',onChanged: (passwordData){
+                password=passwordData;
+              },),
              SizedBox(height: MediaQuery.of(context).size.height*0.02,),
-             CustomButton(text: 'Sign Up', onTap: () { },),
+             CustomButton(text: 'Sign Up',
+               onTap: () async{
+                 FirebaseAuth auth = FirebaseAuth.instance;
+                 UserCredential user= await  auth.createUserWithEmailAndPassword(email: email!, password: password!);
+                 print(user.user!.email!);
+             },
+             ),
              SizedBox(height: MediaQuery.of(context).size.height*0.02,),
              Row(
                mainAxisAlignment: MainAxisAlignment.center,
