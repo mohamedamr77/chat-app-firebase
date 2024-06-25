@@ -7,7 +7,9 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-
+      style: TextStyle(
+        color: Colors.white
+      ),
       onChanged: onChanged ,
       decoration:  InputDecoration(
         labelText: text,
@@ -15,7 +17,6 @@ class CustomTextFormField extends StatelessWidget {
           color:
           Colors.white,
         ),
-
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.white24),
         ),
