@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "341491368996",
+    "project_id": "chat-app-fb-data",
+    "storage_bucket": "chat-app-fb-data.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341491368996:android:1286cb2c232c21004384b1",
+        "android_client_info": {
+          "package_name": "com.example.chatappFb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz6sjJwmzK5QgtjiaaMU6ZjspsUoxJy9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
