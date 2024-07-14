@@ -3,7 +3,6 @@ import 'package:chatapp/features/logins_singnup-screen/widget/customtextformfiel
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-
 import '../../core/constant.dart';
 
 class SignUpScreen extends StatefulWidget {
